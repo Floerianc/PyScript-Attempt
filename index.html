@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Steilo Graph</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+
+        <!-- PyScript CSS -->
+        <link rel="stylesheet" href="https://pyscript.net/releases/2024.5.2/core.css">
+
+        <!-- This script tag bootstraps PyScript -->
+        <script type="module" src="https://pyscript.net/releases/2024.5.2/core.js"></script>
+
+        <!-- for splashscreen -->
+        <style>
+            #loading { outline: none; border: none; background: transparent; border: solid 3px rgba(255, 255, 255, 0.5); box-shadow: 0px 0px 250px rgb(255, 255, 255); }
+        </style>
+        <script type="module">
+            const loading = document.getElementById('loading');
+            addEventListener('py:ready', () => loading.close());
+            loading.showModal();
+        </script>
+    </head>
+    <body>
+        <dialog id="loading">
+            <h1 style="color: white; font-size: 50px">Loading...</h1>
+        </dialog>
+
+        <div class="sidebar">
+            <a href="https://flo.ohhellnaw.de/">Startseite</a>
+            <a href="https://flo.ohhellnaw.de/overview">Portfolio</a>
+            <a href="https://flo.ohhellnaw.de/imprint">Impressum</a>
+        </div>
+
+        <div class="website">
+            <section class="header">
+                <h1 style="font-size: 48px; line-height: 0;">Wetter in ???</h1>
+                <h4>Eine kleine Webseite, um das Wetter in ??? zu beobachten!</h4>
+            </section>
+
+            <section class="graphs">
+                <div id="mpl" class="mpl"></div>
+                <script type="py" src="./scripts/main.py" config="./pyscript.toml" async></script>
+            </section>
+
+            <section class="info">
+                <div id="info"></div>
+                <div id="info2"></div>
+                <script type="py" src="./scripts/info.py" config="./pyscript.toml" async></script>
+            </section>
+        </div>
+
+    </body>
+</html>
