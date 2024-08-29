@@ -7,3 +7,5 @@ on their documentation just didn't exist anymore lol
 Anyway, to use this you need a server or something.
 I personally just used Live Server in Visual Studio Code and it worked fine.
 I hope you'll like this ^-^
+
+![Vorschau](https://github.com/Floerianc/PyScript-Attempt/blob/main/image.png?raw=true)
